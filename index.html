@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>New York Beauty Industry Data | Barber Doza</title>
-  <meta name="description" content="Explore active New York barbershop and appearance enhancement business licenses by city in this Barber Doza industry data project." />
+  <title>Beauty Industry Data | Barber Doza</title>
+  <meta name="description" content="Explore active barber and beauty business licenses by state in this Barber Doza industry data project." />
   <meta name="theme-color" content="#303636" />
 
   <link rel="icon" type="image/png" href="assets/barber-doza-mark-black.png" />
@@ -25,9 +25,15 @@
       <span class="project-label">Industry Data Project</span>
     </div>
     <div class="hero-copy">
-      <span class="eyebrow">New York State · Active Business Licenses</span>
-      <h1 class="wordmark">New York beauty<br><span class="accent">industry data.</span></h1>
-      <p class="tagline">A city-by-city view of active licensed barbershops and appearance enhancement businesses across New York State.</p>
+      <div class="state-switcher" aria-label="Select state">
+        <a class="state-pill" href="?state=ny" data-state="ny">New York</a>
+        <a class="state-pill" href="?state=il" data-state="il">Illinois</a>
+        <a class="state-pill" href="?state=tx" data-state="tx">Texas</a>
+        <a class="state-pill" href="?state=all" data-state="all">All states</a>
+      </div>
+      <span class="eyebrow" id="hero-eyebrow">New York State · Active Business Licenses</span>
+      <h1 class="wordmark" id="hero-title">New York beauty<br><span class="accent">industry data.</span></h1>
+      <p class="tagline" id="hero-tagline">A city-by-city view of active licensed barbershops and appearance enhancement businesses across New York State.</p>
     </div>
   </div>
 </header>
@@ -35,7 +41,21 @@
 <div id="sample-banner" class="sample-banner" hidden>
   <div class="wrap">
     <strong>Sample data.</strong>
-    <span>This is placeholder data, not the live New York registry. Run the <code>Update NY shop data</code> GitHub Action to replace it.</span>
+    <span id="sample-banner-text">This is placeholder data, not the live registry.</span>
+  </div>
+</div>
+
+<div id="unclassified-banner" class="unclassified-banner" hidden>
+  <div class="wrap">
+    <strong>Unclassified records.</strong>
+    <span id="unclassified-text"></span>
+  </div>
+</div>
+
+<div id="in-progress-banner" class="in-progress-banner" hidden>
+  <div class="wrap">
+    <strong>Geocoding in progress.</strong>
+    <span>Shop counts and rankings are current, but the map is still filling in as more addresses geocode.</span>
   </div>
 </div>
 
@@ -43,7 +63,7 @@
   <div class="wrap dash-nav-inner">
     <a class="dash-nav-link is-active" href="#overview">Overview</a>
     <a class="dash-nav-link" href="#establishments">Establishments</a>
-    <a class="dash-nav-link" href="#workforce">Workforce</a>
+    <a class="dash-nav-link feature-practitioners" href="#workforce">Workforce</a>
     <a class="dash-nav-link" href="#directory">Directory</a>
     <a class="dash-nav-link" href="#data-notes">Data notes</a>
     <a class="dash-nav-link" href="#license">License</a>
@@ -53,15 +73,15 @@
 <main class="wrap">
 
   <section id="overview" class="dash-section">
-    <section class="finder" aria-label="Find a city">
+    <section class="finder" id="geo-finder" aria-label="Find a location">
       <div class="finder-copy">
         <span class="section-kicker">Explore the registry</span>
-        <label for="city-search" class="finder-label">Search by city</label>
-        <p>Filter establishments, map, rankings, and directory. Workforce totals use statewide or estimated city figures.</p>
+        <label for="geo-search" class="finder-label" id="finder-label">Search by city</label>
+        <p id="finder-copy">Filter establishments, map, rankings, and directory.</p>
       </div>
       <div class="finder-input-wrap">
-        <input id="city-search" type="text" list="city-list" placeholder="Try Rochester, Buffalo, or Albany" autocomplete="off" />
-        <datalist id="city-list"></datalist>
+        <input id="geo-search" type="text" list="geo-list" placeholder="Try Rochester, Buffalo, or Albany" autocomplete="off" />
+        <datalist id="geo-list"></datalist>
         <p class="finder-hint" id="finder-hint">Showing statewide totals until you pick a city.</p>
       </div>
     </section>
@@ -79,24 +99,26 @@
     </div>
     <div id="rank-chart" class="rank-chart"></div>
 
-    <div class="section-head subsection-head">
-      <div>
-        <h3 id="growth-title">New establishment licenses by year</h3>
+    <div class="feature-growth">
+      <div class="section-head subsection-head">
+        <div>
+          <h3 id="growth-title">New establishment licenses by year</h3>
+        </div>
+        <p class="muted" id="growth-sub">Original license issue year for currently active shop locations.</p>
       </div>
-      <p class="muted" id="growth-sub">Original license issue year for currently active shop locations.</p>
+      <div id="growth-chart" class="growth-chart" role="img" aria-label="Bar chart of new establishment licenses by year"></div>
     </div>
-    <div id="growth-chart" class="growth-chart" role="img" aria-label="Bar chart of new establishment licenses by year"></div>
 
     <div class="section-head subsection-head">
       <div>
         <h3>Map the market</h3>
       </div>
-      <p class="muted">Zoom, pan, or search a city above. Pins cluster automatically when zoomed out.</p>
+      <p class="muted" id="map-sub">Zoom, pan, or search above. Pins cluster automatically when zoomed out.</p>
     </div>
     <div id="map" class="map"></div>
   </section>
 
-  <section id="workforce" class="dash-section panel-section track-section">
+  <section id="workforce" class="dash-section panel-section track-section feature-practitioners">
     <div class="section-head">
       <div>
         <span class="section-kicker">Workforce · Individual licenses</span>
@@ -142,20 +164,21 @@
   <section id="directory" class="dash-section panel-section track-section table-section">
     <div class="section-head">
       <div>
-        <span class="section-kicker">City directory</span>
-        <h2>Browse all cities</h2>
+        <span class="section-kicker" id="directory-kicker">City directory</span>
+        <h2 id="directory-title">Browse all cities</h2>
       </div>
-      <p class="muted">Verified shop counts plus estimated practitioner totals. Select a row to focus the dashboard.</p>
+      <p class="muted" id="directory-sub">Verified shop counts plus estimated practitioner totals. Select a row to focus the dashboard.</p>
     </div>
     <div class="table-scroll">
       <table id="data-table">
         <thead>
           <tr>
-            <th scope="col">City</th>
-            <th scope="col">Barbershops</th>
-            <th scope="col">Appearance enhancement<br /><span class="th-sub">salons, nails, esthetics, and more</span></th>
+            <th scope="col" id="table-geo-col">City</th>
+            <th scope="col" id="table-cat-a-col">Barbershops</th>
+            <th scope="col" id="table-cat-b-col">Appearance enhancement<br /><span class="th-sub">salons, nails, esthetics, and more</span></th>
+            <th scope="col" class="feature-extra-cat" id="table-cat-c-col" hidden>Category</th>
             <th scope="col">Total shops</th>
-            <th scope="col">Est. practitioners<br /><span class="th-sub">from shop share</span></th>
+            <th scope="col" class="feature-practitioners" id="table-practitioner-col">Est. practitioners<br /><span class="th-sub">from shop share</span></th>
           </tr>
         </thead>
         <tbody id="data-table-body"></tbody>
@@ -184,9 +207,9 @@
         <div><dt>Copyright</dt><dd>&copy; 2026 Barber Doza</dd></div>
         <div><dt>Attribution</dt><dd>Include the copyright notice and a link to this project when you reuse substantial portions.</dd></div>
         <div><dt>Full license text</dt><dd><a href="https://github.com/barberdoza/new-york-02/blob/main/LICENSE">View LICENSE on GitHub</a></dd></div>
-        <div><dt>Underlying data</dt><dd>New York State open data remains subject to the state&rsquo;s own terms. This license applies to Barber Doza&rsquo;s code, design, and processed datasets — not to the original government records.</dd></div>
+        <div><dt>Underlying data</dt><dd>State open data remains subject to each state&rsquo;s own terms. This license applies to Barber Doza&rsquo;s code, design, and processed datasets — not to the original government records.</dd></div>
       </dl>
-      <p class="license-note">No warranty is provided. This is independent research tooling, not legal or licensing advice about operating a barber or beauty business in New York.</p>
+      <p class="license-note">No warranty is provided. This is independent research tooling, not legal or licensing advice about operating a barber or beauty business.</p>
     </div>
   </section>
 
@@ -200,11 +223,14 @@
     </div>
     <div class="footer-notes">
       <p>Source: <span id="source-label">New York State Department of State via data.ny.gov</span> · Last updated <span id="updated-label">—</span></p>
+      <p id="geocode-note" class="feature-geocode" hidden>Map coverage: <span id="geocode-label">—</span></p>
       <p>See <a href="#data-notes">data notes</a> for counting methods and <a href="#license">license</a> for reuse terms.</p>
     </div>
   </div>
 </footer>
 
+<script src="js/states.js"></script>
+<script src="js/aggregate.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="js/app.js"></script>

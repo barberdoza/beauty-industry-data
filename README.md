@@ -1,6 +1,10 @@
-# Barber Doza — New York Beauty Industry Data
+# Barber Doza — Beauty Industry Data
 
-A static, GitHub Pages-ready dashboard showing active licensed **barbershops** and **appearance enhancement businesses** in New York State. It includes statewide and city totals, rankings, a clustered map, and a searchable city table.
+A static, GitHub Pages-ready dashboard showing active licensed barber and beauty businesses. **New York** includes city totals, practitioner estimates, growth charts, and a clustered shop map. **Illinois** adds county-level totals and a bubble map (IDFPR does not publish street addresses). **Texas** includes county rollups plus a geocoded shop pin map from TDLR open data.
+
+Switch states with the **New York / Illinois / Texas / All states** pills in the header, or use `?state=ny`, `?state=il`, `?state=tx`, and `?state=all` in the URL.
+
+The **All states** view combines shop totals across all three registries with normalized barber vs. salon categories. It does not merge city/county directories — open a single-state tab for local detail.
 
 The interface uses the Barber Doza palette and supplied logo assets:
 
@@ -22,9 +26,14 @@ assets/
   barber-doza-mark-black.png
   barber-doza-mark-white.png
 css/style.css
+js/states.js
+js/aggregate.js
 js/app.js
 data/ny_shops.json
+data/il_shops.json
+data/tx_shops.json
 scripts/fetch_data.py
+scripts/enrich_il_centroids.py
 .github/workflows/update-data.yml
 ```
 

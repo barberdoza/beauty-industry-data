@@ -1,1 +1,34 @@
+name: Update NY shop data
 
+on:
+  schedule:
+    # NY's registry updates continuously (it's a live license database, not
+    # an annual survey), so this refreshes weekly. Adjust as you like.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}   # lets you click "Run workflow" in the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch latest NY shop data
+        env:
+          NY_APP_TOKEN: ${{ secrets.NY_APP_TOKEN }}  # optional -- fine to leave unset
+        run: python scripts/fetch_data.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ny_shops.json
+          git diff --quiet --cached || git commit -m "Update NY shop data"
+          git push

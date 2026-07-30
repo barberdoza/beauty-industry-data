@@ -71,3 +71,9 @@ Then open `http://localhost:8000`.
 ## Data source and counting method
 
 Data comes from the New York State Department of State open-data registry. The fetch script counts business-level license categories `DOSAEBUSINESS` and `DOSBARSHOPOWNER`. Area Renters are excluded because they may share an already-counted shop address.
+
+## License
+
+Copyright (c) 2026 Barber Doza. Released under the [MIT License](LICENSE).
+
+You may use, copy, modify, and distribute this project freely, including commercially, provided you include the copyright notice and license text. New York State open data remains subject to the state's own terms.

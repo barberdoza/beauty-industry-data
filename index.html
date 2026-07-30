@@ -39,51 +39,112 @@
   </div>
 </div>
 
+<nav class="dash-nav" id="dash-nav" aria-label="Dashboard sections">
+  <div class="wrap dash-nav-inner">
+    <a class="dash-nav-link is-active" href="#overview">Overview</a>
+    <a class="dash-nav-link" href="#establishments">Establishments</a>
+    <a class="dash-nav-link" href="#workforce">Workforce</a>
+    <a class="dash-nav-link" href="#directory">Directory</a>
+    <a class="dash-nav-link" href="#data-notes">Data notes</a>
+  </div>
+</nav>
+
 <main class="wrap">
-  <section class="finder" aria-label="Find a city">
-    <div class="finder-copy">
-      <span class="section-kicker">Explore the registry</span>
-      <label for="city-search" class="finder-label">Search by city</label>
-      <p>Choose a city to update the totals, rankings, map, and table.</p>
-    </div>
-    <div class="finder-input-wrap">
-      <input id="city-search" type="text" list="city-list" placeholder="Try Rochester, Buffalo, or Albany" autocomplete="off" />
-      <datalist id="city-list"></datalist>
-      <p class="finder-hint" id="finder-hint">Showing statewide totals until you pick a city.</p>
-    </div>
+
+  <section id="overview" class="dash-section">
+    <section class="finder" aria-label="Find a city">
+      <div class="finder-copy">
+        <span class="section-kicker">Explore the registry</span>
+        <label for="city-search" class="finder-label">Search by city</label>
+        <p>Filter establishments, map, rankings, and directory. Workforce totals use statewide or estimated city figures.</p>
+      </div>
+      <div class="finder-input-wrap">
+        <input id="city-search" type="text" list="city-list" placeholder="Try Rochester, Buffalo, or Albany" autocomplete="off" />
+        <datalist id="city-list"></datalist>
+        <p class="finder-hint" id="finder-hint">Showing statewide totals until you pick a city.</p>
+      </div>
+    </section>
+
+    <div id="overview-panel" class="overview-panel" aria-live="polite"></div>
   </section>
 
-  <section id="summary" class="detail" aria-live="polite"></section>
-
-  <section class="rank-section panel-section">
+  <section id="establishments" class="dash-section panel-section track-section">
     <div class="section-head">
       <div>
-        <span class="section-kicker">Market concentration</span>
+        <span class="section-kicker">Verified · Establishments</span>
         <h2 id="rank-title">Top cities by total shops</h2>
       </div>
-      <p class="muted" id="rank-sub">Barbershops and appearance enhancement businesses combined.</p>
+      <p class="muted" id="rank-sub">Active business licenses with published city locations. Barbershops and appearance enhancement businesses combined.</p>
     </div>
     <div id="rank-chart" class="rank-chart"></div>
-  </section>
 
-  <section class="map-section panel-section">
-    <div class="section-head">
+    <div class="section-head subsection-head">
       <div>
-        <span class="section-kicker">Location view</span>
-        <h2>Map the market</h2>
+        <h3 id="growth-title">New establishment licenses by year</h3>
+      </div>
+      <p class="muted" id="growth-sub">Original license issue year for currently active shop locations.</p>
+    </div>
+    <div id="growth-chart" class="growth-chart" role="img" aria-label="Bar chart of new establishment licenses by year"></div>
+
+    <div class="section-head subsection-head">
+      <div>
+        <h3>Map the market</h3>
       </div>
       <p class="muted">Zoom, pan, or search a city above. Pins cluster automatically when zoomed out.</p>
     </div>
     <div id="map" class="map"></div>
   </section>
 
-  <section class="table-section panel-section">
+  <section id="workforce" class="dash-section panel-section track-section">
+    <div class="section-head">
+      <div>
+        <span class="section-kicker">Workforce · Individual licenses</span>
+        <h2>Practitioner licenses by specialty</h2>
+      </div>
+      <p class="muted" id="practitioner-sub">Statewide active counts. City breakdowns below are estimated — NY open data does not publish practitioner cities.</p>
+    </div>
+    <div class="table-scroll practitioner-table-scroll">
+      <table id="practitioner-table">
+        <thead>
+          <tr>
+            <th scope="col">License type</th>
+            <th scope="col">Active licenses</th>
+            <th scope="col" id="practitioner-latest-year-col">Latest year new</th>
+            <th scope="col">Year-over-year</th>
+          </tr>
+        </thead>
+        <tbody id="practitioner-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="section-head subsection-head specialty-head">
+      <div>
+        <h3>Practitioner license growth</h3>
+      </div>
+      <div class="specialty-picker">
+        <label for="practitioner-type-select">Specialty</label>
+        <select id="practitioner-type-select"></select>
+      </div>
+    </div>
+    <p class="specialty-meta" id="practitioner-growth-meta"></p>
+    <div id="practitioner-growth-chart" class="growth-chart" role="img" aria-label="Practitioner license growth by year"></div>
+
+    <div class="section-head subsection-head">
+      <div>
+        <h3>Top cities by estimated practitioner workforce</h3>
+      </div>
+      <p class="muted" id="practitioner-city-sub">Stacked bars show estimated barbers, cosmetologists, estheticians, and other specialties per city.</p>
+    </div>
+    <div id="practitioner-city-chart" class="rank-chart practitioner-city-chart" role="img" aria-label="Top cities by estimated practitioner workforce"></div>
+  </section>
+
+  <section id="directory" class="dash-section panel-section track-section table-section">
     <div class="section-head">
       <div>
         <span class="section-kicker">City directory</span>
         <h2>Browse all cities</h2>
       </div>
-      <p class="muted">The table follows the city search above. Select a row to focus the dashboard.</p>
+      <p class="muted">Verified shop counts plus estimated practitioner totals. Select a row to focus the dashboard.</p>
     </div>
     <div class="table-scroll">
       <table id="data-table">
@@ -93,12 +154,21 @@
             <th scope="col">Barbershops</th>
             <th scope="col">Appearance enhancement<br /><span class="th-sub">salons, nails, esthetics, and more</span></th>
             <th scope="col">Total shops</th>
+            <th scope="col">Est. practitioners<br /><span class="th-sub">from shop share</span></th>
           </tr>
         </thead>
         <tbody id="data-table-body"></tbody>
       </table>
     </div>
   </section>
+
+  <section id="data-notes" class="dash-section track-section data-notes-section">
+    <details class="data-notes" open>
+      <summary>Data notes &amp; methodology</summary>
+      <div id="data-notes-body" class="data-notes-body"></div>
+    </details>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -109,7 +179,7 @@
     </div>
     <div class="footer-notes">
       <p>Source: <span id="source-label">New York State Department of State via data.ny.gov</span> · Last updated <span id="updated-label">—</span></p>
-      <p>Counts represent active business-level licenses, not individual practitioner licenses. Area Renters are excluded to reduce double-counting of physical locations.</p>
+      <p>See <a href="#data-notes">data notes</a> for counting methods, estimates, and limitations.</p>
     </div>
   </div>
 </footer>

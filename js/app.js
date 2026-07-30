@@ -1113,10 +1113,26 @@
   }
 
   function boot(data) {
+    if (cfg.features.census) {
+      window.bootCensus({ els, cfg, data });
+      return;
+    }
     init(data);
   }
 
-  if (cfg.features.aggregate) {
+  if (cfg.features.census) {
+    fetch(cfg.dataUrl)
+      .then((r) => {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(boot)
+      .catch((err) => {
+        if (els.overviewPanel) {
+          els.overviewPanel.innerHTML = `<p class="muted">Couldn't load ${cfg.dataUrl} (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.</p>`;
+        }
+      });
+  } else if (cfg.features.aggregate) {
     window
       .loadAggregateData(window.STATES)
       .then(boot)

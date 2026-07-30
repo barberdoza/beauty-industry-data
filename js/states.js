@@ -185,5 +185,41 @@
       pageDescription:
         "Compare active barber and beauty business license totals across New York, Illinois, and Texas in this Barber Doza industry data project.",
     },
+    census: {
+      id: "census",
+      name: "U.S. Census",
+      dataUrl: "data/cbp_data.json",
+      geoKey: "state",
+      geoLabel: "state",
+      geoPlural: "states",
+      stateDisplayName: "United States",
+      features: { census: true, practitioners: false, growth: false },
+      hero: {
+        eyebrow: "U.S. Census Bureau · County Business Patterns",
+        title: 'State of the<br><span class="accent">shop.</span>',
+        tagline:
+          "A state-by-state view of America's barbershops, beauty salons, and nail salons — employer and solo/self-employed counts from Census data.",
+      },
+      finder: {
+        label: "Look up a state",
+        hint: "Filter rankings and the directory. Toggle metrics to compare shops, employees, payroll, or solo operators.",
+        placeholder: "Try Texas, New York, or California",
+        emptyHint: "National totals shown until you pick a state.",
+        selectedHint: (name) => `Showing ${name}. Clear the search to return to national totals.`,
+      },
+      rank: {
+        sub: "Ranked by the selected metric across barbershops, beauty salons, and nail salons.",
+      },
+      directory: {
+        kicker: "State directory",
+        title: "Browse all states",
+        sub: "Census establishment estimates by state. Select a row to focus the dashboard.",
+      },
+      sampleBanner:
+        "This is placeholder data, not real Census figures. Run the Census data fetch workflow with a Census API key to pull live numbers.",
+      pageTitle: "U.S. Census Barbershop & Salon Data | Barber Doza",
+      pageDescription:
+        "Browse U.S. Census Bureau County Business Patterns data on barbershops, beauty salons, and nail salons by state.",
+    },
   };
 })(typeof window !== "undefined" ? window : globalThis);

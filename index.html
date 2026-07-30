@@ -30,6 +30,7 @@
         <a class="state-pill" href="?state=il" data-state="il">Illinois</a>
         <a class="state-pill" href="?state=tx" data-state="tx">Texas</a>
         <a class="state-pill" href="?state=all" data-state="all">All states</a>
+        <a class="state-pill" href="?state=census" data-state="census">U.S. Census</a>
       </div>
       <span class="eyebrow" id="hero-eyebrow">New York State · Active Business Licenses</span>
       <h1 class="wordmark" id="hero-title">New York beauty<br><span class="accent">industry data.</span></h1>
@@ -82,6 +83,13 @@
       <div class="finder-input-wrap">
         <input id="geo-search" type="text" list="geo-list" placeholder="Try Rochester, Buffalo, or Albany" autocomplete="off" />
         <datalist id="geo-list"></datalist>
+        <div class="metric-toggle feature-census-only" id="metric-toggle" hidden role="group" aria-label="Metric to display">
+          <button type="button" class="metric-btn is-active" data-metric="establishments">Shops</button>
+          <button type="button" class="metric-btn" data-metric="employees">Employees</button>
+          <button type="button" class="metric-btn" data-metric="payroll_annual_thousands">Payroll</button>
+          <button type="button" class="metric-btn" data-metric="nonemployer.establishments">Solo shops</button>
+          <button type="button" class="metric-btn" data-metric="total_shops">Total shops</button>
+        </div>
         <p class="finder-hint" id="finder-hint">Showing statewide totals until you pick a city.</p>
       </div>
     </section>
@@ -92,30 +100,32 @@
   <section id="establishments" class="dash-section panel-section track-section">
     <div class="section-head">
       <div>
-        <span class="section-kicker">Verified · Establishments</span>
+        <span class="section-kicker" id="establishments-kicker">Verified · Establishments</span>
         <h2 id="rank-title">Top cities by total shops</h2>
       </div>
       <p class="muted" id="rank-sub">Active business licenses with published city locations. Barbershops and appearance enhancement businesses combined.</p>
     </div>
     <div id="rank-chart" class="rank-chart"></div>
 
-    <div class="feature-growth">
+    <div class="feature-hide-census">
+      <div class="feature-growth">
+        <div class="section-head subsection-head">
+          <div>
+            <h3 id="growth-title">New establishment licenses by year</h3>
+          </div>
+          <p class="muted" id="growth-sub">Original license issue year for currently active shop locations.</p>
+        </div>
+        <div id="growth-chart" class="growth-chart" role="img" aria-label="Bar chart of new establishment licenses by year"></div>
+      </div>
+
       <div class="section-head subsection-head">
         <div>
-          <h3 id="growth-title">New establishment licenses by year</h3>
+          <h3>Map the market</h3>
         </div>
-        <p class="muted" id="growth-sub">Original license issue year for currently active shop locations.</p>
+        <p class="muted" id="map-sub">Zoom, pan, or search above. Pins cluster automatically when zoomed out.</p>
       </div>
-      <div id="growth-chart" class="growth-chart" role="img" aria-label="Bar chart of new establishment licenses by year"></div>
+      <div id="map" class="map"></div>
     </div>
-
-    <div class="section-head subsection-head">
-      <div>
-        <h3>Map the market</h3>
-      </div>
-      <p class="muted" id="map-sub">Zoom, pan, or search above. Pins cluster automatically when zoomed out.</p>
-    </div>
-    <div id="map" class="map"></div>
   </section>
 
   <section id="workforce" class="dash-section panel-section track-section feature-practitioners">
@@ -231,6 +241,7 @@
 
 <script src="js/states.js"></script>
 <script src="js/aggregate.js"></script>
+<script src="js/census.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script src="js/app.js"></script>

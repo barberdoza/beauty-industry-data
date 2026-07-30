@@ -1,0 +1,1903 @@
+{
+  "generated_at": "2026-07-29T01:22:50.187042+00:00",
+  "year": "2023",
+  "source": "U.S. Census Bureau, County Business Patterns (employer) & Nonemployer Statistics (self-employed)",
+  "source_url": "https://api.census.gov/data/2023/cbp",
+  "nonemployer_source_url": "https://api.census.gov/data/2023/nonemp",
+  "nonemployer_note": null,
+  "is_sample": false,
+  "categories": {
+    "812111": "Barber Shops",
+    "812112": "Beauty Salons",
+    "812113": "Nail Salons"
+  },
+  "states": [
+    {
+      "state_fips": "01",
+      "state": "Alabama",
+      "abbr": "AL",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 55,
+          "employees": 254,
+          "payroll_annual_thousands": 6918,
+          "nonemployer": {
+            "establishments": 2607,
+            "receipts_thousands": 63371
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 740,
+          "employees": 3559,
+          "payroll_annual_thousands": 113012,
+          "nonemployer": {
+            "establishments": 16590,
+            "receipts_thousands": 393517
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 290,
+          "employees": 738,
+          "payroll_annual_thousands": 23700,
+          "nonemployer": {
+            "establishments": 5519,
+            "receipts_thousands": 292335
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "02",
+      "state": "Alaska",
+      "abbr": "AK",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 14,
+          "employees": 51,
+          "payroll_annual_thousands": 2068,
+          "nonemployer": {
+            "establishments": 136,
+            "receipts_thousands": 6411
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 143,
+          "employees": 542,
+          "payroll_annual_thousands": 18453,
+          "nonemployer": {
+            "establishments": 922,
+            "receipts_thousands": 47118
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 61,
+          "employees": 282,
+          "payroll_annual_thousands": 13201,
+          "nonemployer": {
+            "establishments": 194,
+            "receipts_thousands": 9326
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "04",
+      "state": "Arizona",
+      "abbr": "AZ",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 206,
+          "employees": 647,
+          "payroll_annual_thousands": 22913,
+          "nonemployer": {
+            "establishments": 3090,
+            "receipts_thousands": 152764
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1711,
+          "employees": 8312,
+          "payroll_annual_thousands": 266593,
+          "nonemployer": {
+            "establishments": 14156,
+            "receipts_thousands": 532551
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 661,
+          "employees": 2968,
+          "payroll_annual_thousands": 94471,
+          "nonemployer": {
+            "establishments": 7661,
+            "receipts_thousands": 291992
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "05",
+      "state": "Arkansas",
+      "abbr": "AR",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 36,
+          "employees": 155,
+          "payroll_annual_thousands": 5411,
+          "nonemployer": {
+            "establishments": 1210,
+            "receipts_thousands": 29002
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 453,
+          "employees": 1756,
+          "payroll_annual_thousands": 49699,
+          "nonemployer": {
+            "establishments": 9160,
+            "receipts_thousands": 235406
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 131,
+          "employees": 327,
+          "payroll_annual_thousands": 9974,
+          "nonemployer": {
+            "establishments": 2501,
+            "receipts_thousands": 121658
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "06",
+      "state": "California",
+      "abbr": "CA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 594,
+          "employees": 2273,
+          "payroll_annual_thousands": 78278,
+          "nonemployer": {
+            "establishments": 16464,
+            "receipts_thousands": 610765
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 8733,
+          "employees": 33898,
+          "payroll_annual_thousands": 1093321,
+          "nonemployer": {
+            "establishments": 91170,
+            "receipts_thousands": 3319644
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 6750,
+          "employees": 35630,
+          "payroll_annual_thousands": 765760,
+          "nonemployer": {
+            "establishments": 17498,
+            "receipts_thousands": 443581
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "08",
+      "state": "Colorado",
+      "abbr": "CO",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 189,
+          "employees": 1179,
+          "payroll_annual_thousands": 41899,
+          "nonemployer": {
+            "establishments": 1519,
+            "receipts_thousands": 65477
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2029,
+          "employees": 8042,
+          "payroll_annual_thousands": 291451,
+          "nonemployer": {
+            "establishments": 11528,
+            "receipts_thousands": 467374
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 739,
+          "employees": 4050,
+          "payroll_annual_thousands": 151967,
+          "nonemployer": {
+            "establishments": 2883,
+            "receipts_thousands": 101745
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "09",
+      "state": "Connecticut",
+      "abbr": "CT",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 79,
+          "employees": 206,
+          "payroll_annual_thousands": 7488,
+          "nonemployer": {
+            "establishments": 1425,
+            "receipts_thousands": 56015
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1049,
+          "employees": 5521,
+          "payroll_annual_thousands": 181823,
+          "nonemployer": {
+            "establishments": 6598,
+            "receipts_thousands": 245596
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 781,
+          "employees": 3759,
+          "payroll_annual_thousands": 79836,
+          "nonemployer": {
+            "establishments": 1228,
+            "receipts_thousands": 29577
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "10",
+      "state": "Delaware",
+      "abbr": "DE",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 31,
+          "employees": 123,
+          "payroll_annual_thousands": 4396,
+          "nonemployer": {
+            "establishments": 295,
+            "receipts_thousands": 10707
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 277,
+          "employees": 1830,
+          "payroll_annual_thousands": 59121,
+          "nonemployer": {
+            "establishments": 1597,
+            "receipts_thousands": 50995
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 145,
+          "employees": 732,
+          "payroll_annual_thousands": 18588,
+          "nonemployer": {
+            "establishments": 422,
+            "receipts_thousands": 16735
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "11",
+      "state": "District of Columbia",
+      "abbr": "DC",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 15,
+          "employees": 88,
+          "payroll_annual_thousands": 4028,
+          "nonemployer": {
+            "establishments": 201,
+            "receipts_thousands": 6409
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 154,
+          "employees": 1050,
+          "payroll_annual_thousands": 49260,
+          "nonemployer": {
+            "establishments": 1653,
+            "receipts_thousands": 39730
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 63,
+          "employees": 347,
+          "payroll_annual_thousands": 14181,
+          "nonemployer": {
+            "establishments": 203,
+            "receipts_thousands": 10500
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "12",
+      "state": "Florida",
+      "abbr": "FL",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 808,
+          "employees": 1620,
+          "payroll_annual_thousands": 50198,
+          "nonemployer": {
+            "establishments": 14315,
+            "receipts_thousands": 513593
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 7534,
+          "employees": 28246,
+          "payroll_annual_thousands": 870211,
+          "nonemployer": {
+            "establishments": 73746,
+            "receipts_thousands": 2251003
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 1742,
+          "employees": 4343,
+          "payroll_annual_thousands": 127324,
+          "nonemployer": {
+            "establishments": 46328,
+            "receipts_thousands": 1963273
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "13",
+      "state": "Georgia",
+      "abbr": "GA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 212,
+          "employees": 710,
+          "payroll_annual_thousands": 22343,
+          "nonemployer": {
+            "establishments": 7783,
+            "receipts_thousands": 191202
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2563,
+          "employees": 10692,
+          "payroll_annual_thousands": 348812,
+          "nonemployer": {
+            "establishments": 48205,
+            "receipts_thousands": 1150421
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 847,
+          "employees": 1637,
+          "payroll_annual_thousands": 47013,
+          "nonemployer": {
+            "establishments": 23245,
+            "receipts_thousands": 1028832
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "15",
+      "state": "Hawaii",
+      "abbr": "HI",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 48,
+          "employees": 178,
+          "payroll_annual_thousands": 4807,
+          "nonemployer": {
+            "establishments": 348,
+            "receipts_thousands": 13439
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 335,
+          "employees": 1466,
+          "payroll_annual_thousands": 48754,
+          "nonemployer": {
+            "establishments": 2282,
+            "receipts_thousands": 97410
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 86,
+          "employees": 230,
+          "payroll_annual_thousands": 7304,
+          "nonemployer": {
+            "establishments": 1208,
+            "receipts_thousands": 46772
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "16",
+      "state": "Idaho",
+      "abbr": "ID",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 33,
+          "employees": 241,
+          "payroll_annual_thousands": 9238,
+          "nonemployer": {
+            "establishments": 502,
+            "receipts_thousands": 19068
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 403,
+          "employees": 1834,
+          "payroll_annual_thousands": 56294,
+          "nonemployer": {
+            "establishments": 4926,
+            "receipts_thousands": 159557
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 98,
+          "employees": 277,
+          "payroll_annual_thousands": 8937,
+          "nonemployer": {
+            "establishments": 1172,
+            "receipts_thousands": 41460
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "17",
+      "state": "Illinois",
+      "abbr": "IL",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 294,
+          "employees": 1029,
+          "payroll_annual_thousands": 33705,
+          "nonemployer": {
+            "establishments": 6511,
+            "receipts_thousands": 157782
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 3346,
+          "employees": 16713,
+          "payroll_annual_thousands": 541724,
+          "nonemployer": {
+            "establishments": 36168,
+            "receipts_thousands": 962660
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 968,
+          "employees": 2854,
+          "payroll_annual_thousands": 87749,
+          "nonemployer": {
+            "establishments": 12059,
+            "receipts_thousands": 492029
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "18",
+      "state": "Indiana",
+      "abbr": "IN",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 126,
+          "employees": 533,
+          "payroll_annual_thousands": 18089,
+          "nonemployer": {
+            "establishments": 2417,
+            "receipts_thousands": 62243
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1438,
+          "employees": 7391,
+          "payroll_annual_thousands": 219848,
+          "nonemployer": {
+            "establishments": 17419,
+            "receipts_thousands": 475595
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 194,
+          "employees": 546,
+          "payroll_annual_thousands": 18845,
+          "nonemployer": {
+            "establishments": 5201,
+            "receipts_thousands": 249373
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "19",
+      "state": "Iowa",
+      "abbr": "IA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 28,
+          "employees": 102,
+          "payroll_annual_thousands": 3708,
+          "nonemployer": {
+            "establishments": 616,
+            "receipts_thousands": 17185
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 796,
+          "employees": 3250,
+          "payroll_annual_thousands": 107049,
+          "nonemployer": {
+            "establishments": 6537,
+            "receipts_thousands": 212459
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 154,
+          "employees": 415,
+          "payroll_annual_thousands": 11394,
+          "nonemployer": {
+            "establishments": 1965,
+            "receipts_thousands": 82147
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "20",
+      "state": "Kansas",
+      "abbr": "KS",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 44,
+          "employees": 205,
+          "payroll_annual_thousands": 7790,
+          "nonemployer": {
+            "establishments": 770,
+            "receipts_thousands": 25956
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 654,
+          "employees": 3416,
+          "payroll_annual_thousands": 105611,
+          "nonemployer": {
+            "establishments": 6005,
+            "receipts_thousands": 204812
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 258,
+          "employees": 1392,
+          "payroll_annual_thousands": 41698,
+          "nonemployer": {
+            "establishments": 1260,
+            "receipts_thousands": 35338
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "21",
+      "state": "Kentucky",
+      "abbr": "KY",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 47,
+          "employees": 160,
+          "payroll_annual_thousands": 5455,
+          "nonemployer": {
+            "establishments": 1575,
+            "receipts_thousands": 51400
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 680,
+          "employees": 3180,
+          "payroll_annual_thousands": 96076,
+          "nonemployer": {
+            "establishments": 10139,
+            "receipts_thousands": 299922
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 117,
+          "employees": 272,
+          "payroll_annual_thousands": 9215,
+          "nonemployer": {
+            "establishments": 3219,
+            "receipts_thousands": 166403
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "22",
+      "state": "Louisiana",
+      "abbr": "LA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 64,
+          "employees": 260,
+          "payroll_annual_thousands": 8593,
+          "nonemployer": {
+            "establishments": 3660,
+            "receipts_thousands": 83116
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 699,
+          "employees": 2819,
+          "payroll_annual_thousands": 86856,
+          "nonemployer": {
+            "establishments": 20330,
+            "receipts_thousands": 437452
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 537,
+          "employees": 2215,
+          "payroll_annual_thousands": 67005,
+          "nonemployer": {
+            "establishments": 4851,
+            "receipts_thousands": 180572
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "23",
+      "state": "Maine",
+      "abbr": "ME",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 20,
+          "employees": 85,
+          "payroll_annual_thousands": 3547,
+          "nonemployer": {
+            "establishments": 328,
+            "receipts_thousands": 13693
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 293,
+          "employees": 1197,
+          "payroll_annual_thousands": 46252,
+          "nonemployer": {
+            "establishments": 2833,
+            "receipts_thousands": 103095
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 73,
+          "employees": 280,
+          "payroll_annual_thousands": 9132,
+          "nonemployer": {
+            "establishments": 520,
+            "receipts_thousands": 18782
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "24",
+      "state": "Maryland",
+      "abbr": "MD",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 129,
+          "employees": 562,
+          "payroll_annual_thousands": 19040,
+          "nonemployer": {
+            "establishments": 2561,
+            "receipts_thousands": 92555
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1481,
+          "employees": 8613,
+          "payroll_annual_thousands": 284207,
+          "nonemployer": {
+            "establishments": 13785,
+            "receipts_thousands": 412619
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 591,
+          "employees": 2875,
+          "payroll_annual_thousands": 94849,
+          "nonemployer": {
+            "establishments": 5844,
+            "receipts_thousands": 263720
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "25",
+      "state": "Massachusetts",
+      "abbr": "MA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 164,
+          "employees": 398,
+          "payroll_annual_thousands": 14450,
+          "nonemployer": {
+            "establishments": 2754,
+            "receipts_thousands": 111209
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2569,
+          "employees": 13453,
+          "payroll_annual_thousands": 463160,
+          "nonemployer": {
+            "establishments": 10853,
+            "receipts_thousands": 442668
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 1100,
+          "employees": 5223,
+          "payroll_annual_thousands": 155859,
+          "nonemployer": {
+            "establishments": 3559,
+            "receipts_thousands": 106059
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "26",
+      "state": "Michigan",
+      "abbr": "MI",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 188,
+          "employees": 597,
+          "payroll_annual_thousands": 15238,
+          "nonemployer": {
+            "establishments": 4712,
+            "receipts_thousands": 106767
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2170,
+          "employees": 11149,
+          "payroll_annual_thousands": 319856,
+          "nonemployer": {
+            "establishments": 34695,
+            "receipts_thousands": 867120
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 244,
+          "employees": 738,
+          "payroll_annual_thousands": 24691,
+          "nonemployer": {
+            "establishments": 9292,
+            "receipts_thousands": 392499
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "27",
+      "state": "Minnesota",
+      "abbr": "MN",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 88,
+          "employees": 317,
+          "payroll_annual_thousands": 12353,
+          "nonemployer": {
+            "establishments": 1071,
+            "receipts_thousands": 39300
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1521,
+          "employees": 8380,
+          "payroll_annual_thousands": 276131,
+          "nonemployer": {
+            "establishments": 9669,
+            "receipts_thousands": 385649
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 672,
+          "employees": 3411,
+          "payroll_annual_thousands": 103302,
+          "nonemployer": {
+            "establishments": 810,
+            "receipts_thousands": 23499
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "28",
+      "state": "Mississippi",
+      "abbr": "MS",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 28,
+          "employees": 114,
+          "payroll_annual_thousands": 3935,
+          "nonemployer": {
+            "establishments": 2128,
+            "receipts_thousands": 42888
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 302,
+          "employees": 1266,
+          "payroll_annual_thousands": 37669,
+          "nonemployer": {
+            "establishments": 13275,
+            "receipts_thousands": 272212
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 164,
+          "employees": 429,
+          "payroll_annual_thousands": 16155,
+          "nonemployer": {
+            "establishments": 3023,
+            "receipts_thousands": 139139
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "29",
+      "state": "Missouri",
+      "abbr": "MO",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 127,
+          "employees": 622,
+          "payroll_annual_thousands": 21801,
+          "nonemployer": {
+            "establishments": 1883,
+            "receipts_thousands": 55650
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1236,
+          "employees": 6505,
+          "payroll_annual_thousands": 201309,
+          "nonemployer": {
+            "establishments": 15267,
+            "receipts_thousands": 450913
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 399,
+          "employees": 1448,
+          "payroll_annual_thousands": 49972,
+          "nonemployer": {
+            "establishments": 5178,
+            "receipts_thousands": 233884
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "30",
+      "state": "Montana",
+      "abbr": "MT",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 17,
+          "employees": 67,
+          "payroll_annual_thousands": 2571,
+          "nonemployer": {
+            "establishments": 195,
+            "receipts_thousands": 7612
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 224,
+          "employees": 768,
+          "payroll_annual_thousands": 24219,
+          "nonemployer": {
+            "establishments": 2851,
+            "receipts_thousands": 103584
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 39,
+          "employees": 159,
+          "payroll_annual_thousands": 8220,
+          "nonemployer": {
+            "establishments": 497,
+            "receipts_thousands": 18747
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "31",
+      "state": "Nebraska",
+      "abbr": "NE",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 35,
+          "employees": 155,
+          "payroll_annual_thousands": 5494,
+          "nonemployer": {
+            "establishments": 392,
+            "receipts_thousands": 13809
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 596,
+          "employees": 2350,
+          "payroll_annual_thousands": 73481,
+          "nonemployer": {
+            "establishments": 4222,
+            "receipts_thousands": 151801
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 52,
+          "employees": 207,
+          "payroll_annual_thousands": 6359,
+          "nonemployer": {
+            "establishments": 2068,
+            "receipts_thousands": 99036
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "32",
+      "state": "Nevada",
+      "abbr": "NV",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 64,
+          "employees": 189,
+          "payroll_annual_thousands": 5854,
+          "nonemployer": {
+            "establishments": 1613,
+            "receipts_thousands": 51210
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 656,
+          "employees": 2883,
+          "payroll_annual_thousands": 84652,
+          "nonemployer": {
+            "establishments": 10026,
+            "receipts_thousands": 321897
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 235,
+          "employees": 1056,
+          "payroll_annual_thousands": 31546,
+          "nonemployer": {
+            "establishments": 4666,
+            "receipts_thousands": 196979
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "33",
+      "state": "New Hampshire",
+      "abbr": "NH",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 26,
+          "employees": 96,
+          "payroll_annual_thousands": 4107,
+          "nonemployer": {
+            "establishments": 444,
+            "receipts_thousands": 21275
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 403,
+          "employees": 2156,
+          "payroll_annual_thousands": 76148,
+          "nonemployer": {
+            "establishments": 2744,
+            "receipts_thousands": 127248
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 172,
+          "employees": 832,
+          "payroll_annual_thousands": 27061,
+          "nonemployer": {
+            "establishments": 246,
+            "receipts_thousands": 9460
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "34",
+      "state": "New Jersey",
+      "abbr": "NJ",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 560,
+          "employees": 1589,
+          "payroll_annual_thousands": 45700,
+          "nonemployer": {
+            "establishments": 3025,
+            "receipts_thousands": 113827
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 3727,
+          "employees": 21226,
+          "payroll_annual_thousands": 597535,
+          "nonemployer": {
+            "establishments": 12691,
+            "receipts_thousands": 381960
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 2126,
+          "employees": 9666,
+          "payroll_annual_thousands": 200246,
+          "nonemployer": {
+            "establishments": 2274,
+            "receipts_thousands": 63878
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "35",
+      "state": "New Mexico",
+      "abbr": "NM",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 33,
+          "employees": 131,
+          "payroll_annual_thousands": 4357,
+          "nonemployer": {
+            "establishments": 767,
+            "receipts_thousands": 24674
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 362,
+          "employees": 1307,
+          "payroll_annual_thousands": 38780,
+          "nonemployer": {
+            "establishments": 3106,
+            "receipts_thousands": 91750
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 75,
+          "employees": 332,
+          "payroll_annual_thousands": 10931,
+          "nonemployer": {
+            "establishments": 1328,
+            "receipts_thousands": 57349
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "36",
+      "state": "New York",
+      "abbr": "NY",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 1000,
+          "employees": 2332,
+          "payroll_annual_thousands": 62288,
+          "nonemployer": {
+            "establishments": 9333,
+            "receipts_thousands": 280539
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 7124,
+          "employees": 28001,
+          "payroll_annual_thousands": 850573,
+          "nonemployer": {
+            "establishments": 39620,
+            "receipts_thousands": 1119130
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 4329,
+          "employees": 20125,
+          "payroll_annual_thousands": 396340,
+          "nonemployer": {
+            "establishments": 6771,
+            "receipts_thousands": 145924
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "37",
+      "state": "North Carolina",
+      "abbr": "NC",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 194,
+          "employees": 821,
+          "payroll_annual_thousands": 30981,
+          "nonemployer": {
+            "establishments": 4264,
+            "receipts_thousands": 128154
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2226,
+          "employees": 9747,
+          "payroll_annual_thousands": 333776,
+          "nonemployer": {
+            "establishments": 30670,
+            "receipts_thousands": 899546
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 570,
+          "employees": 2040,
+          "payroll_annual_thousands": 62127,
+          "nonemployer": {
+            "establishments": 12550,
+            "receipts_thousands": 647512
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "38",
+      "state": "North Dakota",
+      "abbr": "ND",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 20,
+          "employees": 83,
+          "payroll_annual_thousands": 2943,
+          "nonemployer": {
+            "establishments": 139,
+            "receipts_thousands": 5433
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 240,
+          "employees": 1022,
+          "payroll_annual_thousands": 33471,
+          "nonemployer": {
+            "establishments": 1377,
+            "receipts_thousands": 56799
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 61,
+          "employees": 265,
+          "payroll_annual_thousands": 11039,
+          "nonemployer": {
+            "establishments": 225,
+            "receipts_thousands": 11442
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "39",
+      "state": "Ohio",
+      "abbr": "OH",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 154,
+          "employees": 824,
+          "payroll_annual_thousands": 21909,
+          "nonemployer": {
+            "establishments": 4237,
+            "receipts_thousands": 123598
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2718,
+          "employees": 16854,
+          "payroll_annual_thousands": 479927,
+          "nonemployer": {
+            "establishments": 28273,
+            "receipts_thousands": 835559
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 757,
+          "employees": 3709,
+          "payroll_annual_thousands": 112217,
+          "nonemployer": {
+            "establishments": 7016,
+            "receipts_thousands": 227300
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "40",
+      "state": "Oklahoma",
+      "abbr": "OK",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 60,
+          "employees": 318,
+          "payroll_annual_thousands": 10457,
+          "nonemployer": {
+            "establishments": 1161,
+            "receipts_thousands": 33354
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 675,
+          "employees": 2799,
+          "payroll_annual_thousands": 80418,
+          "nonemployer": {
+            "establishments": 10246,
+            "receipts_thousands": 284875
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 189,
+          "employees": 695,
+          "payroll_annual_thousands": 20441,
+          "nonemployer": {
+            "establishments": 4075,
+            "receipts_thousands": 181813
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "41",
+      "state": "Oregon",
+      "abbr": "OR",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 85,
+          "employees": 464,
+          "payroll_annual_thousands": 17678,
+          "nonemployer": {
+            "establishments": 902,
+            "receipts_thousands": 39635
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 800,
+          "employees": 3225,
+          "payroll_annual_thousands": 102791,
+          "nonemployer": {
+            "establishments": 8400,
+            "receipts_thousands": 334144
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 430,
+          "employees": 1828,
+          "payroll_annual_thousands": 56754,
+          "nonemployer": {
+            "establishments": 1423,
+            "receipts_thousands": 51861
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "42",
+      "state": "Pennsylvania",
+      "abbr": "PA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 301,
+          "employees": 954,
+          "payroll_annual_thousands": 33893,
+          "nonemployer": {
+            "establishments": 4191,
+            "receipts_thousands": 136782
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 4846,
+          "employees": 25539,
+          "payroll_annual_thousands": 727269,
+          "nonemployer": {
+            "establishments": 17464,
+            "receipts_thousands": 484316
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 1846,
+          "employees": 7908,
+          "payroll_annual_thousands": 189115,
+          "nonemployer": {
+            "establishments": 3476,
+            "receipts_thousands": 95959
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "44",
+      "state": "Rhode Island",
+      "abbr": "RI",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 27,
+          "employees": 44,
+          "payroll_annual_thousands": 1141,
+          "nonemployer": {
+            "establishments": 537,
+            "receipts_thousands": 21739
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 387,
+          "employees": 1320,
+          "payroll_annual_thousands": 40721,
+          "nonemployer": {
+            "establishments": 2536,
+            "receipts_thousands": 92737
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 112,
+          "employees": 533,
+          "payroll_annual_thousands": 14938,
+          "nonemployer": {
+            "establishments": 694,
+            "receipts_thousands": 24310
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "45",
+      "state": "South Carolina",
+      "abbr": "SC",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 98,
+          "employees": 362,
+          "payroll_annual_thousands": 12033,
+          "nonemployer": {
+            "establishments": 2473,
+            "receipts_thousands": 72310
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1052,
+          "employees": 4272,
+          "payroll_annual_thousands": 148736,
+          "nonemployer": {
+            "establishments": 17355,
+            "receipts_thousands": 476196
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 314,
+          "employees": 919,
+          "payroll_annual_thousands": 33388,
+          "nonemployer": {
+            "establishments": 5840,
+            "receipts_thousands": 312562
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "46",
+      "state": "South Dakota",
+      "abbr": "SD",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 8,
+          "employees": 15,
+          "payroll_annual_thousands": 494,
+          "nonemployer": {
+            "establishments": 135,
+            "receipts_thousands": 4234
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 160,
+          "employees": 790,
+          "payroll_annual_thousands": 25985,
+          "nonemployer": {
+            "establishments": 1806,
+            "receipts_thousands": 71948
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 44,
+          "employees": 213,
+          "payroll_annual_thousands": 9721,
+          "nonemployer": {
+            "establishments": 234,
+            "receipts_thousands": 12720
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "47",
+      "state": "Tennessee",
+      "abbr": "TN",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 115,
+          "employees": 642,
+          "payroll_annual_thousands": 23476,
+          "nonemployer": {
+            "establishments": 3700,
+            "receipts_thousands": 99121
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1062,
+          "employees": 6806,
+          "payroll_annual_thousands": 232777,
+          "nonemployer": {
+            "establishments": 24783,
+            "receipts_thousands": 686231
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 314,
+          "employees": 1252,
+          "payroll_annual_thousands": 44366,
+          "nonemployer": {
+            "establishments": 8064,
+            "receipts_thousands": 393958
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "48",
+      "state": "Texas",
+      "abbr": "TX",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 605,
+          "employees": 3693,
+          "payroll_annual_thousands": 128972,
+          "nonemployer": {
+            "establishments": 15726,
+            "receipts_thousands": 473379
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 5740,
+          "employees": 29688,
+          "payroll_annual_thousands": 997253,
+          "nonemployer": {
+            "establishments": 84397,
+            "receipts_thousands": 2508696
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 1881,
+          "employees": 6243,
+          "payroll_annual_thousands": 204986,
+          "nonemployer": {
+            "establishments": 52572,
+            "receipts_thousands": 2282242
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "49",
+      "state": "Utah",
+      "abbr": "UT",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 105,
+          "employees": 454,
+          "payroll_annual_thousands": 12419,
+          "nonemployer": {
+            "establishments": 944,
+            "receipts_thousands": 42965
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 959,
+          "employees": 4299,
+          "payroll_annual_thousands": 107070,
+          "nonemployer": {
+            "establishments": 8668,
+            "receipts_thousands": 248748
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 260,
+          "employees": 993,
+          "payroll_annual_thousands": 34992,
+          "nonemployer": {
+            "establishments": 2681,
+            "receipts_thousands": 97188
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "50",
+      "state": "Vermont",
+      "abbr": "VT",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 8,
+          "employees": 22,
+          "payroll_annual_thousands": 804,
+          "nonemployer": {
+            "establishments": 90,
+            "receipts_thousands": 3366
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 144,
+          "employees": 591,
+          "payroll_annual_thousands": 21450,
+          "nonemployer": {
+            "establishments": 1112,
+            "receipts_thousands": 45134
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 39,
+          "employees": 120,
+          "payroll_annual_thousands": 3963,
+          "nonemployer": {
+            "establishments": 85,
+            "receipts_thousands": 3369
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "51",
+      "state": "Virginia",
+      "abbr": "VA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 260,
+          "employees": 973,
+          "payroll_annual_thousands": 35204,
+          "nonemployer": {
+            "establishments": 3074,
+            "receipts_thousands": 103975
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2602,
+          "employees": 12211,
+          "payroll_annual_thousands": 429473,
+          "nonemployer": {
+            "establishments": 17043,
+            "receipts_thousands": 514500
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 930,
+          "employees": 3889,
+          "payroll_annual_thousands": 123212,
+          "nonemployer": {
+            "establishments": 8159,
+            "receipts_thousands": 308619
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "53",
+      "state": "Washington",
+      "abbr": "WA",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 192,
+          "employees": 1291,
+          "payroll_annual_thousands": 57320,
+          "nonemployer": {
+            "establishments": 1712,
+            "receipts_thousands": 77102
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 2168,
+          "employees": 9074,
+          "payroll_annual_thousands": 364290,
+          "nonemployer": {
+            "establishments": 12584,
+            "receipts_thousands": 549533
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 1234,
+          "employees": 5490,
+          "payroll_annual_thousands": 190084,
+          "nonemployer": {
+            "establishments": 1298,
+            "receipts_thousands": 44124
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "54",
+      "state": "West Virginia",
+      "abbr": "WV",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 17,
+          "employees": 97,
+          "payroll_annual_thousands": 3424,
+          "nonemployer": {
+            "establishments": 448,
+            "receipts_thousands": 13832
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 277,
+          "employees": 1357,
+          "payroll_annual_thousands": 36318,
+          "nonemployer": {
+            "establishments": 3188,
+            "receipts_thousands": 92196
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 55,
+          "employees": 121,
+          "payroll_annual_thousands": 4534,
+          "nonemployer": {
+            "establishments": 840,
+            "receipts_thousands": 47120
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "55",
+      "state": "Wisconsin",
+      "abbr": "WI",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 133,
+          "employees": 668,
+          "payroll_annual_thousands": 25209,
+          "nonemployer": {
+            "establishments": 1280,
+            "receipts_thousands": 36796
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 1592,
+          "employees": 8345,
+          "payroll_annual_thousands": 253358,
+          "nonemployer": {
+            "establishments": 12199,
+            "receipts_thousands": 418798
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 465,
+          "employees": 1985,
+          "payroll_annual_thousands": 61699,
+          "nonemployer": {
+            "establishments": 1800,
+            "receipts_thousands": 57761
+          }
+        }
+      }
+    },
+    {
+      "state_fips": "56",
+      "state": "Wyoming",
+      "abbr": "WY",
+      "categories": {
+        "812111": {
+          "label": "Barber Shops",
+          "establishments": 5,
+          "employees": 24,
+          "payroll_annual_thousands": 488,
+          "nonemployer": {
+            "establishments": 106,
+            "receipts_thousands": 5778
+          }
+        },
+        "812112": {
+          "label": "Beauty Salons",
+          "establishments": 127,
+          "employees": 354,
+          "payroll_annual_thousands": 10454,
+          "nonemployer": {
+            "establishments": 1395,
+            "receipts_thousands": 46762
+          }
+        },
+        "812113": {
+          "label": "Nail Salons",
+          "establishments": 23,
+          "employees": 61,
+          "payroll_annual_thousands": 2108,
+          "nonemployer": {
+            "establishments": 252,
+            "receipts_thousands": 12213
+          }
+        }
+      }
+    }
+  ]
+}

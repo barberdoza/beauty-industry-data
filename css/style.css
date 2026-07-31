@@ -561,6 +561,7 @@ tbody td .na { color: var(--clay); font-style: italic; font-weight: 400; }
 .panel-section { margin-top: 72px; }
 .section-head { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 22px; }
 .muted { max-width: 480px; margin: 0; color: var(--clay); font-size: .88rem; }
+.loading-state { padding: 1.25rem 0; font-style: italic; }
 
 .rank-chart { display: flex; flex-direction: column; gap: 9px; padding: 26px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
 .rank-row { display: grid; grid-template-columns: 160px 1fr 66px; gap: 12px; align-items: center; }

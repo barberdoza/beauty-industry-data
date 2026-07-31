@@ -234,7 +234,7 @@
     return row ? row.total : null;
   }
 
-  function applyStateChrome() {
+  function applyStaticStateChrome() {
     document.title = cfg.pageTitle;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", cfg.pageDescription);
@@ -255,35 +255,6 @@
     if (els.directoryKicker) els.directoryKicker.textContent = cfg.directory.kicker;
     if (els.directoryTitle) els.directoryTitle.textContent = cfg.directory.title;
     if (els.directorySub) els.directorySub.textContent = cfg.directory.sub;
-
-    const catA = cfg.categoryOrder[0];
-    const catB = cfg.categoryOrder[1];
-    const catC = cfg.categoryOrder[2];
-    if (els.tableGeoCol) els.tableGeoCol.textContent = cfg.geoLabel[0].toUpperCase() + cfg.geoLabel.slice(1);
-    if (els.tableCatACol) els.tableCatACol.textContent = categoryLabel(catA);
-    if (els.tableCatBCol) {
-      if (cfg.id === "il" || cfg.id === "tx" || cfg.id === "ca") {
-        els.tableCatBCol.textContent = categoryLabel(catB);
-      } else {
-        els.tableCatBCol.innerHTML =
-          `${categoryLabel(catB)}<br /><span class="th-sub">salons, nails, esthetics, and more</span>`;
-      }
-    }
-    if (els.tableCatCCol) {
-      if (catC && !cfg.features.aggregate) {
-        els.tableCatCCol.hidden = false;
-        els.tableCatCCol.textContent = categoryLabel(catC);
-      } else if (els.tableCatCCol) {
-        els.tableCatCCol.hidden = true;
-      }
-    }
-
-    if (els.tableCatACol && cfg.features.aggregate) {
-      els.tableCatACol.textContent = "Barber / barbershop";
-    }
-    if (els.tableCatBCol && cfg.features.aggregate) {
-      els.tableCatBCol.textContent = "Salon & full-service";
-    }
 
     if (els.geocodeNote) {
       const showGeocode = cfg.id === "tx";
@@ -333,6 +304,39 @@
     }
 
     if (els.sampleBannerText) els.sampleBannerText.textContent = cfg.sampleBanner;
+  }
+
+  function applyStateChrome() {
+    applyStaticStateChrome();
+
+    const catA = cfg.categoryOrder[0];
+    const catB = cfg.categoryOrder[1];
+    const catC = cfg.categoryOrder[2];
+    if (els.tableGeoCol) els.tableGeoCol.textContent = cfg.geoLabel[0].toUpperCase() + cfg.geoLabel.slice(1);
+    if (els.tableCatACol) els.tableCatACol.textContent = categoryLabel(catA);
+    if (els.tableCatBCol) {
+      if (cfg.id === "il" || cfg.id === "tx" || cfg.id === "ca") {
+        els.tableCatBCol.textContent = categoryLabel(catB);
+      } else {
+        els.tableCatBCol.innerHTML =
+          `${categoryLabel(catB)}<br /><span class="th-sub">salons, nails, esthetics, and more</span>`;
+      }
+    }
+    if (els.tableCatCCol) {
+      if (catC && !cfg.features.aggregate) {
+        els.tableCatCCol.hidden = false;
+        els.tableCatCCol.textContent = categoryLabel(catC);
+      } else if (els.tableCatCCol) {
+        els.tableCatCCol.hidden = true;
+      }
+    }
+
+    if (els.tableCatACol && cfg.features.aggregate) {
+      els.tableCatACol.textContent = "Barber / barbershop";
+    }
+    if (els.tableCatBCol && cfg.features.aggregate) {
+      els.tableCatBCol.textContent = "Salon & full-service";
+    }
   }
 
   function renderOverviewNy(sel, shopTotals) {
@@ -1163,6 +1167,17 @@
     init(data);
   }
 
+  function showLoadError(message) {
+    if (els.overviewPanel) {
+      els.overviewPanel.innerHTML = `<p class="muted">${message}</p>`;
+    }
+  }
+
+  applyStaticStateChrome();
+  if (els.overviewPanel) {
+    els.overviewPanel.innerHTML = `<p class="muted loading-state">Loading ${cfg.name} data…</p>`;
+  }
+
   if (cfg.features.census) {
     fetch(cfg.dataUrl)
       .then((r) => {
@@ -1171,18 +1186,18 @@
       })
       .then(boot)
       .catch((err) => {
-        if (els.overviewPanel) {
-          els.overviewPanel.innerHTML = `<p class="muted">Couldn't load ${cfg.dataUrl} (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.</p>`;
-        }
+        showLoadError(
+          `Couldn't load ${cfg.dataUrl} (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.`
+        );
       });
   } else if (cfg.features.aggregate) {
     window
       .loadAggregateData(window.STATES)
       .then(boot)
       .catch((err) => {
-        if (els.overviewPanel) {
-          els.overviewPanel.innerHTML = `<p class="muted">Couldn't load combined state data (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.</p>`;
-        }
+        showLoadError(
+          `Couldn't load combined state data (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.`
+        );
       });
   } else {
     fetch(cfg.dataUrl)
@@ -1192,9 +1207,9 @@
       })
       .then(boot)
       .catch((err) => {
-        if (els.overviewPanel) {
-          els.overviewPanel.innerHTML = `<p class="muted">Couldn't load ${cfg.dataUrl} (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.</p>`;
-        }
+        showLoadError(
+          `Couldn't load ${cfg.dataUrl} (${err.message}). Serve the folder with a local server (e.g. <code>python3 -m http.server</code>) rather than opening the file directly.`
+        );
       });
   }
 })();

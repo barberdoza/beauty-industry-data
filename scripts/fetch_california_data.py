@@ -244,7 +244,7 @@ def main():
             "Growth charts use original issue year among currently active locations."
         ),
         "rollup": result["rollup"],
-        "shops": result["shops"],
+        "shop_count": len(result["shops"]),
         "centroid_match": {"matched": matched, "total_cities": total_cities},
     }
 

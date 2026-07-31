@@ -27,7 +27,7 @@ DEFAULT_PATHS = [
 ]
 
 ESTABLISHMENT_TYPES = {"Establishment", "Barber Shop"}
-CURRENT_STATUS = {"Current"}
+CURRENT_STATUS = {"Current", "Delinquent"}
 
 CATEGORIES = {
     "BARBER": "Barber Shop",
@@ -230,8 +230,12 @@ def main():
         "practitioner_totals": result["practitioner_totals"],
         "practitioner_growth": result["practitioner_growth"],
         "practitioner_growth_note": (
-            "Practitioner growth uses original issue year among currently active individual licenses. "
+            "Practitioner growth uses original issue year among individual licenses with Current or Delinquent status. "
             "California's public export does not include practitioner city or work location for most records."
+        ),
+        "license_status_note": (
+            "Counts include Current and Delinquent licenses, matching the Board's published license counts export. "
+            "Delinquent licenses remain on the registry but have unpaid renewal fees."
         ),
         "practitioner_city_note": (
             "City practitioner counts are not available — California's export omits city for nearly all individual licenses."
@@ -240,8 +244,9 @@ def main():
         "growth_by_city": result["growth_by_city"],
         "growth_baseline_year": 2014,
         "growth_note": (
-            "Establishment counts use active organization licenses classified as Barber Shop or Establishment. "
-            "Growth charts use original issue year among currently active locations."
+            "Establishment counts use organization licenses classified as Barber Shop or Establishment "
+            "with Current or Delinquent status, matching the Board's published license counts. "
+            "Growth charts use original issue year among those records."
         ),
         "rollup": result["rollup"],
         "shop_count": len(result["shops"]),

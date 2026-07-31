@@ -152,6 +152,8 @@
       mapCenter: [37.2, -119.5],
       mapZoom: 6,
       features: { practitioners: true, growth: true, bubbles: true, practitionerCities: false },
+      shopCountLabel: "Licensed shops (current & delinquent)",
+      practitionerScopeLabel: "Statewide total (current & delinquent)",
       categoryOrder: ["BARBER", "ESTABLISHMENT"],
       categoryTones: { BARBER: "barber", ESTABLISHMENT: "aeb" },
       hero: {
@@ -170,7 +172,7 @@
       rank: {
         title: "Top cities by total shops",
         selectedTitle: (name) => `Top cities · ${name} highlighted`,
-        sub: "Active organization licenses for barber shops and cosmetology/salon establishments.",
+        sub: "Organization licenses for barber shops and cosmetology/salon establishments, including current and delinquent records per Board counts.",
         more: (shown, total) =>
           `Showing top ${shown} of ${total} cities. Full list in the directory below.`,
       },
@@ -180,7 +182,7 @@
         sub: "Verified shop counts by city. Select a row to focus the dashboard.",
       },
       mapSub:
-        "City bubbles sized by active shop count. Street-level pins are not shown — use city search to explore local totals.",
+        "City bubbles sized by licensed shop count. Street-level pins are not shown — use city search to explore local totals.",
       sampleBanner:
         "This is placeholder data, not the live California registry. Run the California data fetch script to replace it.",
       pageTitle: "California Beauty Industry Data | Barber Doza",

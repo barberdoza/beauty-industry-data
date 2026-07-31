@@ -341,7 +341,9 @@
 
   function renderOverviewNy(sel, shopTotals) {
     const practitionerTotal = practitionerTotalForCity(state.selectedGeo);
-    const practitionerScope = state.selectedGeo ? "Estimated for this city" : "Statewide active total";
+    const practitionerScope = state.selectedGeo
+      ? "Estimated for this city"
+      : cfg.practitionerScopeLabel || "Statewide active total";
     const cityPrac = state.selectedGeo && state.practitionerByCity?.[state.selectedGeo];
     const barberDisplay = cityPrac
       ? (cityPrac.barber || 0) + (cityPrac.barber_apprentice || 0)
@@ -363,7 +365,7 @@
         <article class="overview-card overview-card-verified">
           <span class="overview-tag">Verified · Establishments</span>
           <p class="overview-stat-value">${fmtNumber(shopTotals.total)}</p>
-          <p class="overview-stat-label">Active licensed shops</p>
+          <p class="overview-stat-label">${cfg.shopCountLabel || "Active licensed shops"}</p>
           <dl class="overview-breakdown">
             <div><dt>${categoryLabel(catA)}</dt><dd>${fmtNumber(shopTotals[catA] || 0)}</dd></div>
             <div><dt>${categoryLabel(catB)}</dt><dd>${fmtNumber(shopTotals[catB] || 0)}</dd></div>
@@ -435,7 +437,7 @@
         <article class="overview-card overview-card-verified">
           <span class="overview-tag">Verified · Establishments</span>
           <p class="overview-stat-value">${fmtNumber(shopTotals.total)}</p>
-          <p class="overview-stat-label">Active licensed shops</p>
+          <p class="overview-stat-label">${cfg.shopCountLabel || "Active licensed shops"}</p>
           <dl class="overview-breakdown">${boards}</dl>
         </article>
       </div>`;
@@ -874,10 +876,13 @@
             ].filter(Boolean)
           : cfg.id === "ca"
             ? [
+                state.data.license_status_note
+                  ? { title: "License status", body: state.data.license_status_note }
+                  : null,
                 { title: "Establishment counts", body: state.data.growth_note },
                 {
                   title: "Establishment growth",
-                  body: "Growth uses original issue year among currently active organization licenses classified as Barber Shop or Establishment.",
+                  body: "Growth uses original issue year among organization licenses classified as Barber Shop or Establishment.",
                 },
                 {
                   title: "Practitioner totals",

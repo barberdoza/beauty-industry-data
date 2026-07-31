@@ -48,6 +48,23 @@
         return data.geocode_coverage || null;
       },
     },
+    {
+      id: "ca",
+      name: "California",
+      geoLabel: "cities",
+      mapCenter: [37.2, -119.5],
+      sumRow(row) {
+        return {
+          barber: row.BARBER || 0,
+          salon: row.ESTABLISHMENT || 0,
+          total: row.total || 0,
+        };
+      },
+      practitioners(data) {
+        if (!data.practitioner_totals) return null;
+        return Object.values(data.practitioner_totals).reduce((sum, n) => sum + n, 0);
+      },
+    },
   ];
 
   function sumRollup(data, sumRow) {
@@ -98,7 +115,7 @@
 
     return {
       generated_at: generatedAt,
-      source: "Multiple state open data registries (New York, Illinois, Texas)",
+      source: "Multiple state open data registries (New York, Illinois, Texas, California)",
       is_sample: rollup.some((row) => datasets[row.stateId]?.is_sample),
       categories: {
         barber: "Barber / barbershop",
@@ -110,14 +127,14 @@
       aggregate_note:
         "Totals sum active licensed shop locations from each state registry. Categories are normalized across different state license schemas — barbershop-type licenses vs. salon, appearance, and combined establishment types.",
       practitioner_note:
-        "Individual practitioner license counts are only published for New York in this project. They are shown for context but are not included in the combined shop total above.",
+        "Individual practitioner license counts are published for New York and California. They are shown for context but are not included in the combined shop total above.",
       geography_note:
-        "New York is rolled up by city; Illinois and Texas by county. Local geography counts are not comparable across states.",
+        "New York and California are rolled up by city; Illinois and Texas by county. Local geography counts are not comparable across states.",
     };
   };
 
   global.loadAggregateData = function loadAggregateData(statesConfig) {
-    const ids = ["ny", "il", "tx"];
+    const ids = ["ny", "il", "tx", "ca"];
     return Promise.all(
       ids.map((id) =>
         fetch(statesConfig[id].dataUrl).then((response) => {
@@ -125,6 +142,6 @@
           return response.json();
         })
       )
-    ).then(([ny, il, tx]) => buildAggregateData({ ny, il, tx }));
+    ).then(([ny, il, tx, ca]) => buildAggregateData({ ny, il, tx, ca }));
   };
 })(typeof window !== "undefined" ? window : globalThis);

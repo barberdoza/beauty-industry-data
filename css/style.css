@@ -247,7 +247,7 @@ a { color: var(--mauve); }
 
 .state-compare-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
 }
@@ -819,7 +819,7 @@ tbody td.td-est { color: var(--clay); font-weight: 600; }
   .wordmark { font-size: clamp(3rem, 16vw, 5.4rem); }
   .finder { gap: 22px; padding: 24px; }
   .overview-grid { grid-template-columns: 1fr; }
-  .state-compare-grid { grid-template-columns: 1fr; }
+  .state-compare-grid { grid-template-columns: 1fr 1fr; }
   .board-grid { grid-template-columns: 1fr; }
   .metric-btn { flex: 1 1 45%; border-bottom: 1px solid var(--line); }
   .board-grid { grid-template-columns: 1fr; }

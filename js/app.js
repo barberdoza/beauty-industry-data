@@ -130,7 +130,9 @@
   }
 
   function tableColumnCount() {
-    return 1 + cfg.categoryOrder.length + 1 + (cfg.features.practitioners ? 1 : 0);
+    let cols = 1 + cfg.categoryOrder.length + 1;
+    if (cfg.features.practitioners && cfg.features.practitionerCities !== false) cols += 1;
+    return cols;
   }
 
   function findRollup(name) {
@@ -260,7 +262,7 @@
     if (els.tableGeoCol) els.tableGeoCol.textContent = cfg.geoLabel[0].toUpperCase() + cfg.geoLabel.slice(1);
     if (els.tableCatACol) els.tableCatACol.textContent = categoryLabel(catA);
     if (els.tableCatBCol) {
-      if (cfg.id === "il" || cfg.id === "tx") {
+      if (cfg.id === "il" || cfg.id === "tx" || cfg.id === "ca") {
         els.tableCatBCol.textContent = categoryLabel(catB);
       } else {
         els.tableCatBCol.innerHTML =
@@ -302,12 +304,32 @@
       else node.setAttribute("hidden", "");
     });
 
-    if (els.mapSub) {
-      els.mapSub.textContent =
-        cfg.mapSub ||
-        (cfg.features.shopPins
-          ? "Zoom, pan, or search above. Pins cluster automatically when zoomed out."
-          : "County bubbles sized by active shop count. IDFPR does not publish street addresses.");
+    const showPractitionerCities = cfg.features.practitioners && cfg.features.practitionerCities !== false;
+    document.querySelectorAll(".feature-practitioner-cities, .feature-practitioner-estimates").forEach((node) => {
+      node.classList.toggle("feature-hidden", !showPractitionerCities);
+      if (showPractitionerCities) node.removeAttribute("hidden");
+      else node.setAttribute("hidden", "");
+    });
+
+    document.querySelectorAll(".feature-census-only").forEach((node) => {
+      node.hidden = true;
+      node.classList.add("feature-hidden");
+    });
+
+    if (els.practitionerSub && cfg.id === "ca") {
+      els.practitionerSub.textContent =
+        "Statewide active counts from California DCA exports. City breakdowns are not published for individual licenses.";
+    } else if (els.practitionerSub && cfg.features.practitioners) {
+      els.practitionerSub.textContent =
+        "Statewide active counts. City breakdowns below are estimated — NY open data does not publish practitioner cities.";
+    }
+
+    if (els.mapSub && cfg.mapSub) {
+      els.mapSub.textContent = cfg.mapSub;
+    } else if (els.mapSub) {
+      els.mapSub.textContent = cfg.features.shopPins
+        ? "Zoom, pan, or search above. Pins cluster automatically when zoomed out."
+        : "County bubbles sized by active shop count. IDFPR does not publish street addresses.";
     }
 
     if (els.sampleBannerText) els.sampleBannerText.textContent = cfg.sampleBanner;
@@ -563,7 +585,7 @@
   }
 
   function renderPractitionerCityChart(keys) {
-    if (!els.practitionerCityChart) return;
+    if (!els.practitionerCityChart || cfg.features.practitionerCities === false) return;
 
     const ranked = practitionerCityEstimates();
     if (!ranked.length) {
@@ -757,9 +779,10 @@
         const categoryCells = cfg.categoryOrder
           .map((code) => `<td>${fmtNumber(r[code] || 0)}</td>`)
           .join("");
-        const practitionerCell = cfg.features.practitioners
-          ? `<td class="td-est">${fmtNumber(estPractitioners)}</td>`
-          : "";
+        const practitionerCell =
+          cfg.features.practitioners && cfg.features.practitionerCities !== false
+            ? `<td class="td-est">${fmtNumber(estPractitioners)}</td>`
+            : "";
         const geoMeta =
           cfg.features.aggregate && r.geoCount
             ? `<span class="td-sub">${fmtNumber(r.geoCount)} ${r.geoLabel}</span>`
@@ -845,6 +868,26 @@
                   }
                 : null,
             ].filter(Boolean)
+          : cfg.id === "ca"
+            ? [
+                { title: "Establishment counts", body: state.data.growth_note },
+                {
+                  title: "Establishment growth",
+                  body: "Growth uses original issue year among currently active organization licenses classified as Barber Shop or Establishment.",
+                },
+                {
+                  title: "Practitioner totals",
+                  body: "Individual license counts come from the same California DCA export. Practitioner cities are not published for nearly all records.",
+                },
+                { title: "Practitioner growth", body: state.data.practitioner_growth_note },
+                { title: "City map", body: "City bubbles use Census place centroids. They show shop totals by city, not individual street addresses." },
+                state.data.centroid_match
+                  ? {
+                      title: "City centroids",
+                      body: `${fmtNumber(state.data.centroid_match.matched)} of ${fmtNumber(state.data.centroid_match.total_cities)} cities matched a Census place centroid for mapping.`,
+                    }
+                  : null,
+              ].filter(Boolean)
           : [
             { title: "Establishment counts", body: state.data.growth_note },
             {

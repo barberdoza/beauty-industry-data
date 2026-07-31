@@ -14,6 +14,7 @@
     "New York": "ny",
     Illinois: "il",
     Texas: "tx",
+    California: "ca",
   };
 
   function getMetric(cat, metric) {

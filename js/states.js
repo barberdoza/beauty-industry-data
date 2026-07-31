@@ -140,6 +140,53 @@
       pageDescription:
         "Explore active Texas barbering and cosmetology establishment licenses by county in this Barber Doza industry data project.",
     },
+    ca: {
+      id: "ca",
+      name: "California",
+      dataUrl: "data/ca_shops.json",
+      geoKey: "city",
+      geoLabel: "city",
+      geoPlural: "cities",
+      geoArticle: "a",
+      stateDisplayName: "California",
+      mapCenter: [37.2, -119.5],
+      mapZoom: 6,
+      features: { practitioners: true, growth: true, bubbles: true, practitionerCities: false },
+      categoryOrder: ["BARBER", "ESTABLISHMENT"],
+      categoryTones: { BARBER: "barber", ESTABLISHMENT: "aeb" },
+      hero: {
+        eyebrow: "California · Active Business Licenses",
+        title: 'California beauty<br><span class="accent">industry data.</span>',
+        tagline:
+          "A city-by-city view of active licensed barber shops and cosmetology establishments across California.",
+      },
+      finder: {
+        label: "Search by city",
+        hint: "Filter establishments, rankings, and directory. Practitioner totals are statewide — CA exports omit practitioner cities.",
+        placeholder: "Try Los Angeles, San Diego, or Sacramento",
+        emptyHint: "Showing statewide totals until you pick a city.",
+        selectedHint: (name) => `Showing ${name}. Clear the search to return to statewide view.`,
+      },
+      rank: {
+        title: "Top cities by total shops",
+        selectedTitle: (name) => `Top cities · ${name} highlighted`,
+        sub: "Active organization licenses for barber shops and cosmetology/salon establishments.",
+        more: (shown, total) =>
+          `Showing top ${shown} of ${total} cities. Full list in the directory below.`,
+      },
+      directory: {
+        kicker: "City directory",
+        title: "Browse all cities",
+        sub: "Verified shop counts by city. Select a row to focus the dashboard.",
+      },
+      mapSub:
+        "City bubbles sized by active shop count. Street-level pins are not shown — use city search to explore local totals.",
+      sampleBanner:
+        "This is placeholder data, not the live California registry. Run the California data fetch script to replace it.",
+      pageTitle: "California Beauty Industry Data | Barber Doza",
+      pageDescription:
+        "Explore active California barber and cosmetology establishment licenses by city in this Barber Doza industry data project.",
+    },
     all: {
       id: "all",
       name: "All states",
@@ -157,12 +204,12 @@
         eyebrow: "Multi-state · Active Business Licenses",
         title: 'Beauty industry<br><span class="accent">across states.</span>',
         tagline:
-          "Combined and comparable totals for New York, Illinois, and Texas — normalized across different state license categories.",
+          "Combined and comparable totals for New York, Illinois, Texas, and California — normalized across different state license categories.",
       },
       finder: {
         label: "Search by state",
         hint: "Filter the comparison table and chart. Each state uses its own local geography in the single-state views.",
-        placeholder: "Try New York, Illinois, or Texas",
+        placeholder: "Try California, New York, or Texas",
         emptyHint: "Showing combined totals across all tracked states.",
         selectedHint: (name) => `Showing ${name}. Clear the search to return to the combined view.`,
       },
@@ -170,7 +217,7 @@
         title: "States by total licensed shops",
         selectedTitle: (name) => `${name} · highlighted`,
         sub: "Normalized barber/barbershop vs. salon and full-service categories. Click a row to open that state's dashboard.",
-        more: () => "Three states currently tracked. Open a state tab for city- or county-level detail.",
+        more: () => "Four license-registry states currently tracked. Open a state tab for city- or county-level detail.",
       },
       directory: {
         kicker: "State comparison",
@@ -183,7 +230,7 @@
         "One or more state datasets are placeholder sample data. Run each state's data fetch workflow for live registry figures.",
       pageTitle: "Multi-State Beauty Industry Data | Barber Doza",
       pageDescription:
-        "Compare active barber and beauty business license totals across New York, Illinois, and Texas in this Barber Doza industry data project.",
+        "Compare active barber and beauty business license totals across New York, Illinois, Texas, and California in this Barber Doza industry data project.",
     },
     census: {
       id: "census",

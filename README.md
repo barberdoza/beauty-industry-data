@@ -1,8 +1,8 @@
 # Barber Doza — Beauty Industry Data
 
-A static, GitHub Pages-ready dashboard showing active licensed barber and beauty businesses. **New York** includes city totals, practitioner estimates, growth charts, and a clustered shop map. **Illinois** adds county-level totals and a bubble map (IDFPR does not publish street addresses). **Texas** includes county rollups plus a geocoded shop pin map from TDLR open data. **U.S. Census** adds all 50 states from County Business Patterns (barbershops, beauty salons, nail salons — employer and solo counts).
+A static, GitHub Pages-ready dashboard showing active licensed barber and beauty businesses. **New York** includes city totals, practitioner estimates, growth charts, and a clustered shop map. **Illinois** adds county-level totals and a bubble map (IDFPR does not publish street addresses). **California** adds city-level establishments plus statewide practitioner totals from DCA exports. **U.S. Census** adds all 50 states from County Business Patterns (barbershops, beauty salons, nail salons — employer and solo counts).
 
-Switch states with the header pills, or use `?state=ny`, `?state=il`, `?state=tx`, `?state=all`, and `?state=census` in the URL.
+Switch states with the header pills, or use `?state=ny`, `?state=il`, `?state=tx`, `?state=ca`, `?state=all`, and `?state=census` in the URL.
 
 The **All states** view combines shop totals across all three registries with normalized barber vs. salon categories. It does not merge city/county directories — open a single-state tab for local detail.
 
@@ -30,7 +30,9 @@ js/states.js
 js/aggregate.js
 js/census.js
 js/app.js
+data/ca_shops.json
 data/cbp_data.json
+scripts/fetch_california_data.py
 data/ny_shops.json
 data/il_shops.json
 data/tx_shops.json

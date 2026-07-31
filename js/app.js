@@ -339,6 +339,60 @@
     }
   }
 
+  function statusShare(value, total) {
+    if (!total) return "0.0%";
+    return `${((value / total) * 100).toFixed(1)}%`;
+  }
+
+  function renderStatusStack(label, current, delinquent) {
+    const total = current + delinquent;
+    if (!total) return "";
+    const currentPct = (current / total) * 100;
+    const delinquentPct = (delinquent / total) * 100;
+    return `
+      <div class="status-row">
+        <div class="status-row-head">
+          <span class="status-row-label">${label}</span>
+          <span class="status-row-total">${fmtNumber(total)}</span>
+        </div>
+        <div class="rank-bar-track rank-bar-track-stacked status-bar" role="img" aria-label="${label}: ${fmtNumber(current)} current, ${fmtNumber(delinquent)} delinquent">
+          <span class="rank-bar-segment rank-bar-segment-current" style="width:${currentPct}%"></span>
+          <span class="rank-bar-segment rank-bar-segment-delinquent" style="width:${delinquentPct}%"></span>
+        </div>
+        <dl class="status-legend">
+          <div><dt><span class="status-swatch status-swatch-current" aria-hidden="true"></span>Current</dt><dd>${fmtNumber(current)} · ${statusShare(current, total)}</dd></div>
+          <div><dt><span class="status-swatch status-swatch-delinquent" aria-hidden="true"></span>Delinquent</dt><dd>${fmtNumber(delinquent)} · ${statusShare(delinquent, total)}</dd></div>
+        </dl>
+      </div>`;
+  }
+
+  function renderLicenseStatusBreakdown(sel) {
+    const breakdown = state.data.license_status_breakdown;
+    if (!breakdown) return "";
+
+    let estCurrent = breakdown.establishments.current;
+    let estDelinquent = breakdown.establishments.delinquent;
+    let scopeNote = "Statewide totals from the California DCA export.";
+
+    if (sel && sel.current != null && sel.delinquent != null) {
+      estCurrent = sel.current;
+      estDelinquent = sel.delinquent;
+      scopeNote = `Establishment status for ${geoDisplayName(geoName(sel))}. Practitioner breakdown remains statewide — individual license cities are not published.`;
+    }
+
+    const prac = breakdown.practitioners;
+
+    return `
+      <section class="status-breakdown" aria-label="License status breakdown">
+        <div class="status-breakdown-head">
+          <h3>Current vs. delinquent</h3>
+          <p class="muted">${scopeNote} Delinquent licenses remain on the registry but have unpaid renewal fees.</p>
+        </div>
+        ${renderStatusStack("Establishments", estCurrent, estDelinquent)}
+        ${renderStatusStack("Practitioners", prac.current, prac.delinquent)}
+      </section>`;
+  }
+
   function renderOverviewNy(sel, shopTotals) {
     const practitionerTotal = practitionerTotalForCity(state.selectedGeo);
     const practitionerScope = state.selectedGeo
@@ -383,7 +437,8 @@
           </dl>
           ${prac.latest ? `<p class="overview-yoy${pracYoYClass}">${prac.latest.year} new licenses: ${fmtNumber(prac.latest.total)} · ${fmtPercent(pracYoY)} YoY statewide</p>` : ""}
         </article>
-      </div>`;
+      </div>
+      ${renderLicenseStatusBreakdown(sel)}`;
   }
 
   function renderOverviewAggregate(sel, shopTotals) {

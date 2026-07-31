@@ -129,8 +129,11 @@ def attach_centroids(rollup):
 
 def process_files(paths):
     rollup = defaultdict(lambda: {code: 0 for code in CATEGORIES})
+    rollup_status = defaultdict(lambda: {"current": 0, "delinquent": 0})
     shops = []
     practitioner_totals = defaultdict(int)
+    practitioner_status = {"current": 0, "delinquent": 0}
+    establishment_status = {"current": 0, "delinquent": 0}
     practitioner_growth = defaultdict(lambda: defaultdict(int))
     establishment_growth = defaultdict(lambda: defaultdict(int))
     growth_by_city = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
@@ -148,6 +151,7 @@ def process_files(paths):
                     continue
 
                 issue_year = parse_issue_year(row.get("Original Issue Date"))
+                status_key = "current" if status == "Current" else "delinquent"
 
                 if indiv_org == "O":
                     cat = classify_establishment(license_type)
@@ -155,6 +159,8 @@ def process_files(paths):
                         continue
                     city = normalize_city(row.get("City"))
                     rollup[city][cat] += 1
+                    rollup_status[city][status_key] += 1
+                    establishment_status[status_key] += 1
                     name = (row.get("Org/Last Name") or "").strip()
                     county = (row.get("County") or "").strip()
                     zip_code = (row.get("Zip") or "").strip()
@@ -172,6 +178,7 @@ def process_files(paths):
                     if not key:
                         continue
                     practitioner_totals[key] += 1
+                    practitioner_status[status_key] += 1
                     if issue_year:
                         practitioner_growth[issue_year][key] += 1
                         practitioner_growth[issue_year]["total"] += 1
@@ -179,7 +186,8 @@ def process_files(paths):
     rollup_out = []
     for city, counts in rollup.items():
         total = sum(counts.values())
-        entry = {"city": city, "total": total, **counts}
+        status = rollup_status[city]
+        entry = {"city": city, "total": total, **counts, **status}
         rollup_out.append(entry)
     rollup_out.sort(key=lambda r: (-r["total"], r["city"]))
 
@@ -204,6 +212,16 @@ def process_files(paths):
         "practitioner_growth": prac_growth,
         "growth": growth,
         "growth_by_city": growth_by_city_out,
+        "license_status_breakdown": {
+            "establishments": {
+                **establishment_status,
+                "total": establishment_status["current"] + establishment_status["delinquent"],
+            },
+            "practitioners": {
+                **practitioner_status,
+                "total": practitioner_status["current"] + practitioner_status["delinquent"],
+            },
+        },
     }
 
 
@@ -250,6 +268,7 @@ def main():
         ),
         "rollup": result["rollup"],
         "shop_count": len(result["shops"]),
+        "license_status_breakdown": result["license_status_breakdown"],
         "centroid_match": {"matched": matched, "total_cities": total_cities},
     }
 
